@@ -12,12 +12,14 @@ const handlers = require('./lib/handlers');
 
 const { ArticleResourceOptions } = require("./adminjs/articleoptions");
 const { UserResourceOptions } = require("./adminjs/useroptions");
+const { CategoryResourceOptions } = require("./adminjs/categoryoptions");
+const { FollowResourceOptions } = require("./adminjs/followoptions");
 
 // init adminJS
 const adminJS = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: [UserResourceOptions, ArticleResourceOptions],
+    resources: [UserResourceOptions, ArticleResourceOptions, CategoryResourceOptions, FollowResourceOptions],
 });
 const adminJSRouter = AdminJSExpress.buildRouter(adminJS);
 

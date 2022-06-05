@@ -9,6 +9,7 @@ const ArticleSchemat = new mongoose.Schema({
     slug: { type: String, slug: 'title', unique: true },
     created_at: { type: Date, default: Date.now },
     author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    category: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Category' }],
 })
 
 const Article = mongoose.model('Article', ArticleSchemat);
